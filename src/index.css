@@ -1,1 +1,7 @@
-/*# sourceMappingURL=index.css.map */
+.navbar-container {
+  display: flex;
+}
+
+body {
+  background-color: aqua;
+}/*# sourceMappingURL=index.css.map */
