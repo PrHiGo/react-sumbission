@@ -1,5 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import "./index.css";
 
 
 function LanguageChange() {
@@ -10,27 +11,26 @@ function LanguageChange() {
   };
   return (
     <div className="dropdown">
-      <button onClick={handleOpen}>Dropdown</button>
-      {open ? (<ul><li>Swedish</li><li>English</li></ul>) : (null)}
+      <button onClick={handleOpen}>EN</button>
+      {open ? (<ul><li>SV</li><li>EN</li></ul>) : (null)}
     </div>
   )
 }
 
 function Navbar() {
+
   return (
     <div className='navbar-container'>
       <nav>
-        <ul>
-          <button><li>Home</li></button>
-        </ul>
+        <button className='btn btn-navbar'>Home</button>
         <input type="text" placeholder='Search IMDb...' />
-        <button type="button">SEARCH</button>
-        <button type="button">Watchlist</button>
-        <button type="button">Sign in</button>
-        <div className='language-container'>
-          <LanguageChange />
-        </div>
+        <button className='btn btn-search' type="button">SEARCH</button>
+        <button className='btn btn-navbar' type="button">Watchlist</button>
+        <button className='btn btn-navbar' type="button">Sign in</button>
       </nav>
+      <div className='language-container'>
+        <LanguageChange />
+      </div>
     </div>
   )
 }
@@ -38,6 +38,18 @@ function Navbar() {
 function HeroContainer() {
   return (
     <div className='hero-container'></div>
+  )
+}
+
+function MovieCard() {
+  return (
+    <div>
+      <article>
+        <section>
+          <h2>Movie Title</h2>
+        </section>
+      </article>
+    </div>
   )
 }
 

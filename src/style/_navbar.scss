@@ -1,3 +1,63 @@
 .navbar-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  gap: 1rem;
+  background-color: rgb(30, 30, 30);
+  border-radius: 3px;
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    input {
+      width: 50rem;
+      height: 2rem;
+      border-radius: 5px;
+      border-style: none;
+    }
+    .btn-search {
+      cursor: pointer;
+      margin-left: -5rem;
+      height: 2rem;
+      width: 4rem;
+      background-color: white;
+      color: rgb(75, 75, 75);
+      border-radius: 5px;
+      border-style: none;
+    }
+    .btn-navbar {
+      cursor: pointer;
+      height: 2rem;
+      width: 4rem;
+      background-color: rgb(30, 30, 30);
+      color: whitesmoke;
+      border-style: none;
+    }
+  }
+  .dropdown {
+    display: flex;
+    justify-content: center;
+    ul {
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 1.5rem;
+      padding: 0;
+      gap: 0.5rem;
+      margin-bottom: auto;
+      position: absolute;
+      border: 0.5px solid black;
+      border-radius: 3px;
+      background-color: rgb(35, 35, 35);
+      li {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
 }
