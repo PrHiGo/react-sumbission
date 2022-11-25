@@ -2,10 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 4rem;
+  height: 3.5rem;
   gap: 1rem;
   background-color: rgb(18, 18, 18);
-  border-radius: 3px;
 }
 .navbar-container nav {
   display: flex;
@@ -32,28 +31,11 @@
   justify-content: center;
   align-items: center;
 }
-.navbar-container .dropdown {
-  display: flex;
-  justify-content: center;
-}
-.navbar-container .dropdown ul {
-  width: 5rem;
-  height: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 1.5rem;
-  padding: 0;
-  gap: 0.5rem;
-  margin-bottom: auto;
-  position: absolute;
-  border: 0.5px solid black;
-  border-radius: 3px;
-  background-color: rgb(35, 35, 35);
-}
-.navbar-container .dropdown ul li {
-  display: flex;
-  justify-content: center;
+.navbar-container nav .dropdown-menu {
+  text-align: center;
+  width: 6.125rem;
+  color: white;
+  background-color: rgb(37, 37, 37);
 }
 
 body {
@@ -76,12 +58,14 @@ body {
   padding-right: 0.5rem;
   width: auto;
   text-align: center;
-  font-weight: 1000;
+  font-size: 14px;
+  font-weight: 500;
   color: whitesmoke;
   background-color: rgb(18, 18, 18);
   border-style: none;
   transition-duration: 0.2s;
-  border-radius: 5px;
+  border-radius: 3px;
+  text-decoration: none;
 }
 .btn-navbar:hover {
   background-color: rgb(37, 37, 37);
@@ -89,23 +73,23 @@ body {
 .btn-navbar:active {
   background-color: rgba(255, 255, 255, 0.291);
 }
-.btn-navbar .linkBtn {
-  color: whitesmoke;
-  text-decoration: none;
-}
 
 .btn-imdb-pro {
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 2.25rem;
   width: 5.25rem;
-  margin-left: 0.5rem;
+  margin-left: 0.75rem;
   text-align: center;
-  font-weight: 1000;
+  font-size: 14px;
+  font-weight: 500;
   color: whitesmoke;
   background-color: rgb(18, 18, 18);
   border-style: none;
   transition-duration: 0.2s;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 .btn-imdb-pro:hover {
   background-color: rgb(37, 37, 37);
@@ -127,7 +111,7 @@ body {
   height: 2rem;
   background-color: white;
   color: rgb(75, 75, 75);
-  border-radius: 5px;
+  border-radius: 3px;
   border-style: none;
 }
 
@@ -139,10 +123,11 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
-  font-weight: 1000;
+  font-size: 14px;
+  font-weight: 500;
   background-color: rgb(18, 18, 18);
   color: white;
-  border-radius: 5px;
+  border-radius: 3px;
   border-style: none;
   transition-duration: 0.2s;
 }
