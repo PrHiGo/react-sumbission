@@ -1,0 +1,91 @@
+.btn-navbar {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  height: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: auto;
+  text-align: center;
+  font-weight: 1000;
+  color: whitesmoke;
+  background-color: rgb(18, 18, 18);
+  border-style: none;
+  transition-duration: 0.2s;
+  border-radius: 5px;
+  &:hover {
+    background-color: rgb(37, 37, 37);
+  }
+  &:active {
+    background-color: rgba(255, 255, 255, 0.291);
+  }
+  .linkBtn {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+}
+
+.btn-imdb-pro {
+  cursor: pointer;
+  height: 2.25rem;
+  width: 5.25rem;
+  margin-left: 0.5rem;
+  text-align: center;
+  font-weight: 1000;
+  color: whitesmoke;
+  background-color: rgb(18, 18, 18);
+  border-style: none;
+  transition-duration: 0.2s;
+  border-radius: 5px;
+  &:hover {
+    background-color: rgb(37, 37, 37);
+  }
+  &:active {
+    background-color: rgba(255, 255, 255, 0.291);
+  }
+  .linkBtn {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+}
+
+.btn-search {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -3rem;
+  height: 2rem;
+  background-color: white;
+  color: rgb(75, 75, 75);
+  border-radius: 5px;
+  border-style: none;
+}
+
+.btn-menu {
+  cursor: pointer;
+  width: 6rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 1000;
+  background-color: rgb(18, 18, 18);
+  color: white;
+  border-radius: 5px;
+  border-style: none;
+  transition-duration: 0.2s;
+  &:hover {
+    background-color: rgb(37, 37, 37);
+  }
+  &:active {
+    background-color: rgba(255, 255, 255, 0.291);
+  }
+  .hamburger {
+    display: flex;
+    align-items: center;
+  }
+}
