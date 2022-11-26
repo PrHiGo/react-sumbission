@@ -1,12 +1,13 @@
 import React from 'react';
+import { useState, useRef } from 'react';
 import { Link, Route, Routes } from "react-router-dom";
+// Pages
 import { Home } from "../pages/Home";
 import { SingleMovie } from "../pages/SingleMovie";
 import { TopMovies } from "../pages/TopMovies";
 import { Login } from "../pages/Login";
-import { useState, useRef } from 'react';
+// Components
 import Navbar from '../compenents/Navbar';
-
 
 export default function App() {
   return (

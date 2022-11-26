@@ -92,3 +92,34 @@
     align-items: center;
   }
 }
+
+.btn-star {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.25rem;
+  width: 3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: whitesmoke;
+  background-color: #1a1a1a;
+  border-style: none;
+  transition-duration: 0.2s;
+  border-radius: 3px;
+  text-decoration: none;
+  &:hover {
+    background-color: rgb(37, 37, 37);
+    color: whitesmoke;
+  }
+  &:active {
+    background-color: rgba(255, 255, 255, 0.291);
+  }
+  .star-empty {
+    width: 1rem;
+    height: 0.8rem;
+  }
+}
