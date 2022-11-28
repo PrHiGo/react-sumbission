@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HeroContainer from "./HeroContainer";
+import Menu from "./menu";
 import icon2 from "../assets/svg/menu2.svg";
 import logo from "../assets/svg/IMDB_Logo_2016.svg";
 import search_icon from "../assets/svg/search_icon.svg";
@@ -15,7 +16,8 @@ export default function Navbar() {
           <Link to="/">
             <img src={logo} className="logo" alt="IMDb logotype" />
           </Link>
-          <button className="btn-menu">
+          <button className="btn-menu" data-bs-toggle="offcanvas"
+            data-bs-target="#IMDbMenu">
             <div className="hamburger">
               <img src={icon2} alt="menu icon"></img>
             </div>
@@ -55,6 +57,7 @@ export default function Navbar() {
         </div>
       </div>
       <HeroContainer />
+      <Menu />
     </>
   )
 }

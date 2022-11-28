@@ -1,9 +1,10 @@
 import React from 'react'
+import MovieCard from './Moviecard'
 
 export default function Main() {
   return (
     <div className='main-container'>
-      <h3>This is the main section</h3>
+      <MovieCard />
     </div>
   )
 }

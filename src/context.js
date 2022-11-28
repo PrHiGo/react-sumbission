@@ -1,11 +1,12 @@
 import React from 'react'
 import { useState, useEffect, useContext, createContext } from 'react';
-const dataUrl = " https://api.themoviedb.org/3/movie/popular?api_key=da7419037c7a90aba658d590da479fb3&language=en-US&page=1";
-const AppContext = createContext()
+let page = 1
+const dataUrl = (`https://api.themoviedb.org/3/movie/popular?api_key=da7419037c7a90aba658d590da479fb3&language=en-US&page=${page}`);
 
-const AppProvider = ({ children }) => {
+export const AppContext = createContext()
+export const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const [movieData, setMovieData] = useState([]);
+  const [movieDataPopular, setMovieDataPopular] = useState([]);
 
   useEffect(() => {
     setLoading(true);
@@ -23,9 +24,9 @@ const AppProvider = ({ children }) => {
               image: item.poster_path,
             }
           })
-          setMovieData(movie);
+          setMovieDataPopular(movie);
         } else {
-          setMovieData([]);
+          setMovieDataPopular([]);
         }
         setLoading(false);
       })
@@ -33,7 +34,7 @@ const AppProvider = ({ children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ loading, movieData }} >
+    <AppContext.Provider value={{ loading, movieDataPopular }} >
       {children}
     </AppContext.Provider>
   )
@@ -42,4 +43,3 @@ export const useGlobalContext = () => {
   return useContext(AppContext)
 }
 
-export { AppContext, AppProvider }

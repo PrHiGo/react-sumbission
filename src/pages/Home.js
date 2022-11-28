@@ -1,13 +1,11 @@
 import React from 'react'
-import MovieCard from '../compenents/Moviecard';
+import Main from '../compenents/Main'
 
 export function Home() {
 
   return (
     <>
-      <div className="card-container">
-        <MovieCard />
-      </div>
+      <Main />
     </>
   )
 }
