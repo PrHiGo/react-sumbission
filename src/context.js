@@ -1,11 +1,9 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
-import MovieCard from '../compenents/Moviecard';
-import { Home } from './pages/Home';
+import { useState, useEffect, useContext, createContext } from 'react';
 const dataUrl = " https://api.themoviedb.org/3/movie/popular?api_key=da7419037c7a90aba658d590da479fb3&language=en-US&page=1";
+const AppContext = createContext()
 
-
-export function FetchData() {
+const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [movieData, setMovieData] = useState([]);
 
@@ -35,8 +33,13 @@ export function FetchData() {
   }, []);
 
   return (
-    <>
-      <MovieCard movieData={movieData} />
-    </>
+    <AppContext.Provider value={{ loading, movieData }} >
+      {children}
+    </AppContext.Provider>
   )
 }
+export const useGlobalContext = () => {
+  return useContext(AppContext)
+}
+
+export { AppContext, AppProvider }

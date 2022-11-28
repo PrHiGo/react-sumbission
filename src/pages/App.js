@@ -1,6 +1,5 @@
 import React from 'react';
-import { useState, useRef } from 'react';
-import { Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // Pages
 import { Home } from "../pages/Home";
 import { SingleMovie } from "../pages/SingleMovie";
@@ -12,7 +11,7 @@ import Navbar from '../compenents/Navbar';
 
 export default function App() {
   return (
-    <>
+    <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,6 +19,6 @@ export default function App() {
         <Route path="/TopMovies" element={<TopMovies />} />
         <Route path="/Login" element={<Login />} />
       </Routes>
-    </>
+    </Router>
   )
 }

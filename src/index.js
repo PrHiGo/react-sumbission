@@ -4,13 +4,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import App from "./pages/App";
 import './index.css';
-import { BrowserRouter } from "react-router-dom";
+import { AppProvider } from './context'
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <AppProvider>
       <App />
-    </BrowserRouter>
+    </AppProvider>
   </React.StrictMode>
 )
