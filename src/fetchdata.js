@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import MovieCard from '../compenents/Moviecard';
+import { Home } from './pages/Home';
 const dataUrl = " https://api.themoviedb.org/3/movie/popular?api_key=da7419037c7a90aba658d590da479fb3&language=en-US&page=1";
 
 
-export function Home(props) {
+export function FetchData() {
   const [loading, setLoading] = useState(true);
   const [movieData, setMovieData] = useState([]);
 
@@ -33,13 +34,9 @@ export function Home(props) {
 
   }, []);
 
-
-
   return (
     <>
-      <div className="card-container">
-        <MovieCard movieData={movieData} />
-      </div>
+      <MovieCard movieData={movieData} />
     </>
   )
 }

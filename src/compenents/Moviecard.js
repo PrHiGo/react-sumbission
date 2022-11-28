@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import demoMovie from "../assets/images/demoMovie.jpg";
 import star from "../assets/svg/star.svg";
 import star_empty from "../assets/svg/star_empty.svg";
 import play_icon from "../assets/svg/play_icon.svg";
