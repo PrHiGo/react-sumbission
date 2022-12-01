@@ -174,10 +174,11 @@ body {
 }
 
 .card-container {
-  display: flex;
+  display: inline-flex;
+  overflow: auto;
+  white-space: nowrap;
   width: 65rem;
   gap: 1.5rem;
-  flex-wrap: wrap;
 }
 .card-container .movieCard-container {
   display: flex;
@@ -194,12 +195,12 @@ body {
   display: flex;
   align-items: center;
   height: 3rem;
-  gap: 0.5rem;
   padding: 0.5rem;
 }
 .card-container .movieCard-container .movie-rating span {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   color: whitesmoke;
 }
 .card-container .movieCard-container .movie-rating span .star {
@@ -236,7 +237,7 @@ body {
   color: whitesmoke;
 }
 
-.dropdown-menu {
+.menu {
   height: 100%;
   background-color: #1a1a1a;
 }

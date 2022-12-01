@@ -3,7 +3,7 @@ import React from 'react'
 export default function Menu() {
   return (
     <div
-      class="offcanvas offcanvas-top dropdown-menu"
+      class="offcanvas offcanvas-top menu"
       tabindex="-1"
       id="IMDbMenu"
       aria-labelledby="menuoffcanvas"

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HeroContainer from "./HeroContainer";
-import Menu from "./menu";
+import Menu from "./Menu";
 import icon2 from "../assets/svg/menu2.svg";
 import logo from "../assets/svg/IMDB_Logo_2016.svg";
 import search_icon from "../assets/svg/search_icon.svg";
