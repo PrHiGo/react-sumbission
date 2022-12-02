@@ -6,7 +6,7 @@ import star_empty from "../assets/svg/star_empty.svg";
 import play_icon from "../assets/svg/play_icon.svg";
 import plus_icon from "../assets/svg/plus_icon.svg";
 
-export default function MovieCard() {
+export default function PopularMovieCard() {
   const { movieDataPopular } = useGlobalContext();
 
   return (

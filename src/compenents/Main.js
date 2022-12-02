@@ -1,10 +1,12 @@
 import React from 'react'
-import MovieCard from './Moviecard'
+import PopularMovieCard from './PopularMovieCard'
+import TopMovieCard from './TopMovieCards'
 
 export default function Main() {
   return (
     <div className='main-container'>
-      <MovieCard />
+      <PopularMovieCard />
+      <TopMovieCard />
     </div>
   )
 }

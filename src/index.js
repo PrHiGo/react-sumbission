@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import App from "./pages/App";
-import './index.css';
+import './index.scss';
 import { AppProvider } from './context'
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));

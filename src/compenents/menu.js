@@ -12,7 +12,7 @@ export default function Menu() {
         <h5 class="menu-title" id="menuoffcanvas">Menu</h5>
         <button
           type="button"
-          class="btn-close"
+          className="btn-close"
           data-bs-dismiss="offcanvas"
           aria-label="Close"
         ></button>
