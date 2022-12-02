@@ -30,7 +30,7 @@ export default function Navbar() {
           <button className="btn-imdb-pro">
             <img src={IMDb_PRO} alt="IMDb Pro logo" />
           </button>
-          <div className="seperator-bar"></div>
+          <div className="separator-bar"></div>
           <div className="button-container">
             <Link to="/Login" style={{ textDecoration: "none" }}>
               <button className="btn-navbar" type="button">
@@ -47,7 +47,7 @@ export default function Navbar() {
               EN
             </button>
             <ul className="dropdown-menu">
-              FULLY SUPORTED
+              FULLY SUPPORTED
               <hr />
               <li>English</li>
             </ul>

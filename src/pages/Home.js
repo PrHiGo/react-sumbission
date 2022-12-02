@@ -1,11 +1,12 @@
 import React from 'react'
-import Main from '../compenents/Main'
+import PopularMovieCard from '../component/PopularMovieCard'
+import TopMovieCard from '../component/TopMovieCards'
 
 export function Home() {
-
   return (
-    <>
-      <Main />
-    </>
+    <div className='main-container'>
+      <PopularMovieCard />
+      <TopMovieCard />
+    </div>
   )
 }

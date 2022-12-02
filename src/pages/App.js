@@ -6,7 +6,7 @@ import { SingleMovie } from "../pages/SingleMovie";
 import { TopMovies } from "../pages/TopMovies";
 import { Login } from "../pages/Login";
 // Components
-import Navbar from '../compenents/Navbar';
+import Navbar from '../component/Navbar';
 
 
 export default function App() {
