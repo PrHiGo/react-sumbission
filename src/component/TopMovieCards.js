@@ -10,8 +10,8 @@ export default function TopMovieCard() {
   const { movieDataTop } = useGlobalContext();
 
   return (
-    <div className="popular-movies">
-      <h5>Top Movies</h5>
+    <div className="movie-collection-container">
+      <h3>Top Movies</h3>
       <div className="card-container">
         {movieDataTop.map((movie) => (
           <div className="movieCard-container" key={movie.id}>

@@ -1,0 +1,42 @@
+.singleMovie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1f1f1f;
+  section {
+    display: flex;
+    align-items: center;
+    width: 64.25rem;
+    .movie-header {
+      display: flex;
+      flex-direction: column;
+      color: whitesmoke;
+    }
+    .singleMovieRating {
+      display: flex;
+      margin-left: auto;
+      gap: 2rem;
+      color: #bcbcbc;
+    }
+  }
+  .movieAndTrailer {
+    display: flex;
+    gap: 0.5rem;
+    .singleMovieImg {
+      width: 17.75rem;
+      height: 26.25rem;
+    }
+    .movieTrailer {
+      width: 46rem;
+      height: 26.25rem;
+    }
+  }
+  .movieInfo-container {
+    width: 64.25rem;
+    .movie-text {
+      width: 35rem;
+      color: whitesmoke;
+    }
+  }
+}
