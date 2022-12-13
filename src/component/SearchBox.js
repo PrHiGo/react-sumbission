@@ -2,7 +2,7 @@ import search_icon from "../assets/svg/search_icon.svg";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function SearchBox(props) {
+export default function SearchBox() {
   const apiKey = "da7419037c7a90aba658d590da479fb3";
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -29,6 +29,8 @@ export default function SearchBox(props) {
             }
           })
           setMovies(movie);
+        } else {
+          setMovies([])
         }
         setLoading(false);
       })
