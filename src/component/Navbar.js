@@ -9,8 +9,6 @@ import IMDb_PRO from "../assets/svg/IMDb_PRO.svg";
 import watchlist_icon from "../assets/svg/watchlist_icon.svg";
 
 export default function Navbar() {
-  const [value, setValue] = useState("");
-
 
   return (
     <>

@@ -10,8 +10,38 @@
 
 .searched-movies {
   width: 45rem;
-  height: auto;
+  max-height: 47.5rem;
   position: absolute;
   margin-top: 2.25rem;
+  overflow: scroll;
   background-color: #1f1f1f;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 1rem;
+
+    li {
+      width: 20rem;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: whitesmoke;
+        .search-movie-img {
+          width: 5rem;
+        }
+      }
+      .bar2 {
+        width: 41rem;
+        height: 1px;
+        margin-top: 1rem;
+        background-color: rgb(56, 56, 56);
+      }
+    }
+  }
 }
