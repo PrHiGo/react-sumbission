@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import HeroContainer from "./HeroContainer";
+import SearchBox from "./SearchBox";
 import icon2 from "../assets/svg/menu2.svg";
 import logo from "../assets/svg/IMDB_Logo_2016.svg";
-import search_icon from "../assets/svg/search_icon.svg";
 import IMDb_PRO from "../assets/svg/IMDb_PRO.svg";
 import watchlist_icon from "../assets/svg/watchlist_icon.svg";
 
 export default function Navbar() {
+  const [value, setValue] = useState("");
+
+
   return (
     <>
       <div className="navbar-container">
@@ -22,10 +26,7 @@ export default function Navbar() {
             </div>
             Menu
           </button>
-          <input type="text" placeholder="Search IMDb..." />
-          <button className="btn-search">
-            <img src={search_icon} alt="search icon" />
-          </button>
+          <SearchBox />
           <button className="btn-imdb-pro">
             <img src={IMDb_PRO} alt="IMDb Pro logo" />
           </button>
