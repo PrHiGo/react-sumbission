@@ -12,13 +12,13 @@ import { Modal } from 'bootstrap';
 
 
 export default function App() {
-  const [latest, setLatest] = useState([]);
+  const [recentlyMovieViewed, setRecentlyMovieViewed] = useState([]);
 
   const addToRecentlyViewed = (data) => {
-    const newData = [...latest, data]
-    setLatest(newData);
+    const recentlyMovieViewedClickedMovie = [data, ...recentlyMovieViewed]
+    setRecentlyMovieViewed(recentlyMovieViewedClickedMovie);
   }
-  console.log(latest.length)
+  console.log(recentlyMovieViewed.length)
   return (
     <Router>
       <Navbar addToRecentlyViewed={addToRecentlyViewed} />
@@ -27,7 +27,9 @@ export default function App() {
           <Route path="/" element={<Home addToRecentlyViewed={addToRecentlyViewed} />} />
           <Route path="/movie/:id" element={<SingleMovie />} />
         </Routes>
-        <RecentlyViewed latest={latest} />
+        {recentlyMovieViewed.length <= 6 ? (
+          <RecentlyViewed recentlyMovieViewed={recentlyMovieViewed} />
+        ) : recentlyMovieViewed.pop(6)}
       </div>
     </Router>
   )

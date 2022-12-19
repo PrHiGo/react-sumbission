@@ -7,12 +7,12 @@ import play_icon from "../assets/svg/play_icon.svg";
 import plus_icon from "../assets/svg/plus_icon.svg";
 
 
-export default function RecentlyViewed({ latest }) {
+export default function RecentlyViewed({ recentlyMovieViewed }) {
   return (
     <div className="movie-collection-container">
       <h3>Recently Viewed</h3>
       <div className="card-container">
-        {latest.map((movie) => (
+        {recentlyMovieViewed.map((movie) => (
           <div className="movieCard-container" key={movie.id} >
             <Link to={`/movie/${movie.id}`}><img src={(`https://image.tmdb.org/t/p/w500/${movie.image}`)} className="movie-img" alt="A of the movie" /></Link>
             <div className="movie-rating">
