@@ -6,15 +6,14 @@ import star_empty from "../assets/svg/star_empty.svg";
 import play_icon from "../assets/svg/play_icon.svg";
 import plus_icon from "../assets/svg/plus_icon.svg";
 
-export default function TopMovieCard() {
-  const { movieDataTop } = useGlobalContext();
 
+export default function RecentlyViewed({ latest }) {
   return (
     <div className="movie-collection-container">
-      <h3>Top Movies</h3>
+      <h3>Recently Viewed</h3>
       <div className="card-container">
-        {movieDataTop.map((movie) => (
-          <div className="movieCard-container" key={movie.id}>
+        {latest.map((movie) => (
+          <div className="movieCard-container" key={movie.id} >
             <Link to={`/movie/${movie.id}`}><img src={(`https://image.tmdb.org/t/p/w500/${movie.image}`)} className="movie-img" alt="A of the movie" /></Link>
             <div className="movie-rating">
               <span><img className="star" src={star} alt="A star" />10</span>

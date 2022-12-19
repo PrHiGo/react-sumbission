@@ -2,7 +2,7 @@ import search_icon from "../assets/svg/search_icon.svg";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function SearchBox() {
+export default function SearchBox({ addToRecentlyViewed }) {
   const apiKey = "da7419037c7a90aba658d590da479fb3";
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -44,9 +44,9 @@ export default function SearchBox() {
       <input className="searchbar" type="text" placeholder="Search IMDb..." value={searchValue} onChange={(event) => setSearchValue(event.target.value)} onClick={handleOpen} />
       {open ? (
         <div className="searched-movies">
-          <ul>
+          <ul >
             {movies.map((movie) => (
-              <li>
+              <li key={movie.id} onClick={() => addToRecentlyViewed(movie)} >
                 <Link className="movieLink" to={`/movie/${movie.id}`} style={{ textDecoration: "none" }}>
                   <img className="search-movie-img" src={(`https://image.tmdb.org/t/p/w500/${movie.image}`)} alt="Movie Poster" />
                   <span>

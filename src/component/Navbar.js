@@ -8,7 +8,7 @@ import logo from "../assets/svg/IMDB_Logo_2016.svg";
 import IMDb_PRO from "../assets/svg/IMDb_PRO.svg";
 import watchlist_icon from "../assets/svg/watchlist_icon.svg";
 
-export default function Navbar() {
+export default function Navbar({ addToRecentlyViewed }) {
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function Navbar() {
             </div>
             Menu
           </button>
-          <SearchBox />
+          <SearchBox addToRecentlyViewed={addToRecentlyViewed} />
           <button className="btn-imdb-pro">
             <img src={IMDb_PRO} alt="IMDb Pro logo" />
           </button>
@@ -41,14 +41,6 @@ export default function Navbar() {
                 Sign in
               </button>
             </Link>
-            <button className="btn-navbar dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              EN
-            </button>
-            <ul className="dropdown-menu">
-              FULLY SUPPORTED
-              <hr />
-              <li>English</li>
-            </ul>
           </div>
         </nav>
         <div className="language-container">
