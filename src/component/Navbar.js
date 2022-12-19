@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+
 import HeroContainer from "./HeroContainer";
 import SearchBox from "./SearchBox";
+
 import icon2 from "../assets/svg/menu2.svg";
 import logo from "../assets/svg/IMDB_Logo_2016.svg";
 import IMDb_PRO from "../assets/svg/IMDb_PRO.svg";
@@ -15,12 +16,18 @@ export default function Navbar({ addToRecentlyViewed }) {
       <div className="navbar-container">
         <nav>
           <Link to="/">
-            <img src={logo} className="logo" alt="IMDb logotype" />
+            <img
+              src={logo}
+              className="logo"
+              alt="IMDb logotype"
+            />
           </Link>
-          <button className="btn-menu" data-bs-toggle="offcanvas"
+          <button
+            className="btn-menu"
+            data-bs-toggle="offcanvas"
             data-bs-target="#IMDbMenu">
             <div className="hamburger">
-              <img src={icon2} alt="menu icon"></img>
+              <img src={icon2} alt="menu icon" />
             </div>
             Menu
           </button>

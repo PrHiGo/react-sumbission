@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Link } from "react-router-dom";
-import star from "../assets/svg/star.svg";
+import { useParams } from "react-router-dom";
 
+import star from "../assets/svg/star.svg";
 
 export function SingleMovie() {
   const { id } = useParams();

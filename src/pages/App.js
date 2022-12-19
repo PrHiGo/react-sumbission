@@ -4,12 +4,9 @@ import { useState } from 'react';
 // Pages
 import { Home } from "../pages/Home";
 import { SingleMovie } from "../pages/SingleMovie";
-import { Login } from "../pages/Login";
 // Components
 import Navbar from '../component/Navbar';
 import RecentlyViewed from '../component/RecentlyViewed'
-import { Modal } from 'bootstrap';
-
 
 export default function App() {
   const [recentlyMovieViewed, setRecentlyMovieViewed] = useState([]);
@@ -18,7 +15,7 @@ export default function App() {
     const recentlyMovieViewedClickedMovie = [data, ...recentlyMovieViewed]
     setRecentlyMovieViewed(recentlyMovieViewedClickedMovie);
   }
-  console.log(recentlyMovieViewed.length)
+
   return (
     <Router>
       <Navbar addToRecentlyViewed={addToRecentlyViewed} />
