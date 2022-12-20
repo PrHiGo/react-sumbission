@@ -8,7 +8,6 @@ export function AllMovies() {
   const apiKey = "da7419037c7a90aba658d590da479fb3";
   const page = 1;
   const url = (`https://api.themoviedb.org/3/movie/${direction}?${apiKey}=en-US&page=${page}`)
-  console.log(direction);
 
   useEffect(() => {
     setLoading(true);
@@ -36,6 +35,7 @@ export function AllMovies() {
 
   return (
     <div className='allmovies-container'>
+
       {direction === "top_rated" ? (
         <h3>Top Rated</h3>
       ) : direction === "upcoming" ? (
