@@ -10,6 +10,7 @@ export default function PopularMovieCard({ addToRecentlyViewed }) {
   const direction = "popular"
   const { movieDataPopular } = useGlobalContext();
 
+
   return (
     <div className="movie-collection-container">
       <Link

@@ -10,7 +10,6 @@ export function SingleMovie() {
   const [trailer, setTrailer] = useState([]);
   const movieUrl = (`https://api.themoviedb.org/3/movie/${id}?api_key=da7419037c7a90aba658d590da479fb3&language=en-US`);
   const trailerUrl = (` https://api.themoviedb.org/3/movie/${id}/videos?api_key=da7419037c7a90aba658d590da479fb3&language=en-US`);
-  console.log(id)
   useEffect(() => {
     setLoading(true);
     fetch(movieUrl)
@@ -71,19 +70,25 @@ export function SingleMovie() {
         </div>
       </section>
       <div className='movieAndTrailer'>
-        <img src={(`https://image.tmdb.org/t/p/w500/${movie.image}`)} alt={(`${movie.title} movie poster`)} className='singleMovieImg' />
+        <img
+          src={(`https://image.tmdb.org/t/p/w500/${movie.image}`)}
+          alt={(`${movie.title} movie poster`)}
+          className='singleMovieImg'
+        />
         <iframe
           className='movieTrailer'
           key={trailer.id}
           title={trailer.name}
-          src={(`https://www.youtube.com/embed/${trailer}?controls=0`)}
-          frameBorder="0">
+          src={(`https://www.youtube.com/embed/${trailer}?controls=0&autoplay=1`)}
+        >
         </iframe>
       </div>
       <section className='movieInfo-container'>
+        <hr />
         <div className='movie-text'>
           {movie.info}
         </div>
+        <hr />
       </section>
     </div>
   )

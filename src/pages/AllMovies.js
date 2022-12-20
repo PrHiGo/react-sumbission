@@ -11,13 +11,16 @@ export function AllMovies() {
 
   const listOfMovies = (movie) => {
     return (
-      <li className='all-movies-list-object' key={movie.id}>
-        <img className='all-movies-img'
-          src={(`https://image.tmdb.org/t/p/w500/${movie.image}`)}
-          alt='A Poster of the movie'
-        />
-        {movie.title}
-      </li>
+      <>
+        <li className='all-movies-list-object' key={movie.id}>
+          <img className='all-movies-img'
+            src={(`https://image.tmdb.org/t/p/w500/${movie.image}`)}
+            alt='A Poster of the movie'
+          />
+          <span>{movie.title}</span>
+        </li>
+        <hr />
+      </>
     )
   }
 
@@ -25,37 +28,36 @@ export function AllMovies() {
     <div className='all-movies-container'>
       <div className='all-movies-title'>
         {direction === 'top_rated' ? (
-          <h3>Top Rated</h3>
+          <h2>Top Rated</h2>
         ) : direction === 'upcoming' ? (
-          <h3>Upcoming</h3>
+          <h2>Upcoming</h2>
         ) : direction === 'popular' ? (
-          <h3>Popular</h3>
+          <h2>Popular</h2>
         ) : direction === 'now_playing' ? (
-          <h3>On the theatre</h3>
+          <h2>On the theatre</h2>
         ) : null}
       </div>
-      <div className='all-movies-list-container'>
-        <ul className='all-movies-list'>
-          {direction === 'top_rated' ? (
-            movieDataTop.map((movie) => (
-              listOfMovies(movie)
-            ))
-          ) : direction === 'upcoming' ? (
-            movieDataUpcoming.map((movie) => (
-              listOfMovies(movie)
-            ))
-          ) : direction === 'popular' ? (
-            movieDataPopular.map((movie) => (
-              listOfMovies(movie)
-            ))
-          ) : direction === 'now_playing' ? (
-            movieDataNowPlaying.map((movie) => (
-              listOfMovies(movie)
-            ))
-          ) : null}
+      <ul className='all-movies-list'>
+        {direction === 'top_rated' ? (
+          movieDataTop.map((movie) => (
+            listOfMovies(movie)
+          ))
+        ) : direction === 'upcoming' ? (
+          movieDataUpcoming.map((movie) => (
+            listOfMovies(movie)
+          ))
+        ) : direction === 'popular' ? (
+          movieDataPopular.map((movie) => (
+            listOfMovies(movie)
+          ))
+        ) : direction === 'now_playing' ? (
+          movieDataNowPlaying.map((movie) => (
+            listOfMovies(movie)
+          ))
+        ) : null}
 
-        </ul>
-      </div>
+      </ul>
+
     </div>
   )
 }

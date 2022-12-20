@@ -8,7 +8,9 @@ export default function Menu({ openMenu, setOpenMenu }) {
   const upcoming = "upcoming";
 
   return (
-    <div className={`dropdown-list-close ${openMenu ? ("dropdown-list-open") : ""} `}>
+    <div
+      className={`dropdown-list-close ${openMenu ? ("dropdown-list-open") : ""} `}
+    >
       <ul className='dropdown-menu-list'>
         <Link
           to={`/`}
