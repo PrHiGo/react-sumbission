@@ -10,7 +10,7 @@ export function SingleMovie() {
   const [trailer, setTrailer] = useState([]);
   const movieUrl = (`https://api.themoviedb.org/3/movie/${id}?api_key=da7419037c7a90aba658d590da479fb3&language=en-US`);
   const trailerUrl = (` https://api.themoviedb.org/3/movie/${id}/videos?api_key=da7419037c7a90aba658d590da479fb3&language=en-US`);
-
+  console.log(id)
   useEffect(() => {
     setLoading(true);
     fetch(movieUrl)

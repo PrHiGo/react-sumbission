@@ -4,16 +4,11 @@ import { Link } from "react-router-dom";
 
 export default function SearchBox({ addToRecentlyViewed }) {
   const [movies, setMovies] = useState([]);
-  const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const apiKey = "da7419037c7a90aba658d590da479fb3";
 
-  const handleOpen = () => {
-    setOpen(!open)
-  };
-
-  const getMovies = () => {
+  useEffect(() => {
     setLoading(true);
     fetch((`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchValue}`))
       .then(response => {
@@ -35,9 +30,6 @@ export default function SearchBox({ addToRecentlyViewed }) {
         }
         setLoading(false);
       })
-  }
-  useEffect(() => {
-    getMovies();
   }, [searchValue])
 
   return (
@@ -48,9 +40,8 @@ export default function SearchBox({ addToRecentlyViewed }) {
         placeholder="Search IMDb..."
         value={searchValue}
         onChange={(event) => setSearchValue(event.target.value)}
-        onClick={handleOpen}
       />
-      {open ? (
+      {searchValue ? (
         <div className="searched-movies">
           <ul >
             {movies.map((movie) => (

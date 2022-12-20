@@ -4,6 +4,7 @@ import { useState } from 'react';
 // Pages
 import { Home } from "../pages/Home";
 import { SingleMovie } from "../pages/SingleMovie";
+import { AllMovies } from '../pages/AllMovies';
 // Components
 import Navbar from '../component/Navbar';
 import RecentlyViewed from '../component/RecentlyViewed'
@@ -23,6 +24,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home addToRecentlyViewed={addToRecentlyViewed} />} />
           <Route path="/movie/:id" element={<SingleMovie />} />
+          <Route path="/movies/:direction" element={<AllMovies />} />
         </Routes>
         {recentlyMovieViewed.length <= 6 ? (
           <RecentlyViewed recentlyMovieViewed={recentlyMovieViewed} />

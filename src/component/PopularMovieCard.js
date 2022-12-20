@@ -5,14 +5,19 @@ import { Link } from "react-router-dom";
 import star from "../assets/svg/star.svg";
 import star_empty from "../assets/svg/star_empty.svg";
 import play_icon from "../assets/svg/play_icon.svg";
-import plus_icon from "../assets/svg/plus_icon.svg";
 
 export default function PopularMovieCard({ addToRecentlyViewed }) {
+  const direction = "popular"
   const { movieDataPopular } = useGlobalContext();
 
   return (
     <div className="movie-collection-container">
-      <h3>Popular Movies</h3>
+      <Link
+        to={`/movies/${direction}`}
+        style={{ textDecoration: "none" }}
+      >
+        <h3>Popular Movies</h3>
+      </Link>
       <div className="card-container">
         {movieDataPopular.map((movie) => (
           <div className="movieCard-container" key={movie.id} >
@@ -53,6 +58,7 @@ export default function PopularMovieCard({ addToRecentlyViewed }) {
               <Link
                 to={`/movie/${movie.id}`}
                 style={{ textDecoration: "none" }}
+                onClick={() => addToRecentlyViewed(movie)}
               >
                 <button className="btn-navbar">
                   <img src={play_icon} alt="play icon" />

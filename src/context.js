@@ -7,6 +7,7 @@ export const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [movieDataPopular, setMovieDataPopular] = useState([]);
   const [movieDataTop, setMovieDataTop] = useState([]);
+  const [movieDataUpcoming, setMovieDataUpcoming] = useState([]);
 
   useEffect(() => {
 
@@ -57,12 +58,36 @@ export const AppProvider = ({ children }) => {
         setLoading(false);
       })
 
+
+    // Fetch Upcoming movies  
+    setLoading(true);
+    fetch((`https://api.themoviedb.org/3/movie/upcoming?api_key=da7419037c7a90aba658d590da479fb3&language=en-US&page=${page}`))
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        const moviesResult = data.results;
+        if (moviesResult) {
+          const movie = moviesResult.map((item) => {
+            return {
+              id: item.id,
+              title: item.title,
+              image: item.poster_path,
+            }
+          })
+          setMovieDataUpcoming(movie);
+        } else {
+          setMovieDataUpcoming([]);
+        }
+        setLoading(false);
+      })
+
   }, []);
 
 
 
   return (
-    <AppContext.Provider value={{ loading, movieDataPopular, movieDataTop }} >
+    <AppContext.Provider value={{ loading, movieDataPopular, movieDataTop, movieDataUpcoming }} >
       {children}
     </AppContext.Provider>
   )
