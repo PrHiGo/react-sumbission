@@ -8,8 +8,6 @@ import play_icon from "../assets/svg/play_icon.svg";
 
 export default function RecentlyViewed({ recentlyMovieViewed }) {
 
-
-
   return (
     <div className="movie-collection-container">
       <h3>Recently Viewed</h3>

@@ -1,8 +1,9 @@
-import React from "react";
+import { React, useState } from "react";
 import { Link } from "react-router-dom";
 
 import HeroContainer from "./HeroContainer";
 import SearchBox from "./SearchBox";
+import Menu from "./Menu";
 
 import icon2 from "../assets/svg/menu2.svg";
 import logo from "../assets/svg/IMDB_Logo_2016.svg";
@@ -10,11 +11,12 @@ import IMDb_PRO from "../assets/svg/IMDb_PRO.svg";
 import watchlist_icon from "../assets/svg/watchlist_icon.svg";
 
 export default function Navbar({ addToRecentlyViewed }) {
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <>
       <div className="navbar-container">
-        <nav>
+        <nav className="navigation">
           <Link to="/">
             <img
               src={logo}
@@ -22,21 +24,23 @@ export default function Navbar({ addToRecentlyViewed }) {
               alt="IMDb logotype"
             />
           </Link>
-          <button
-            className="btn-menu"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#IMDbMenu">
-            <div className="hamburger">
-              <img src={icon2} alt="menu icon" />
-            </div>
-            Menu
-          </button>
+          <div className="menu-dropdown">
+            <button
+              className="btn-menu"
+              onClick={() => setOpenMenu(!openMenu)}
+            >
+              <div className="hamburger">
+                <img src={icon2} alt="menu icon" />
+              </div>
+              Menu
+            </button>
+          </div>
           <SearchBox addToRecentlyViewed={addToRecentlyViewed} />
           <button className="btn-imdb-pro">
             <img src={IMDb_PRO} alt="IMDb Pro logo" />
           </button>
           <div className="separator-bar"></div>
-          <div className="button-container">
+          <div className="login-button-container">
             <Link to="/Login" style={{ textDecoration: "none" }}>
               <button className="btn-navbar" type="button">
                 <img src={watchlist_icon} alt="icon of a gravestone" />
@@ -53,6 +57,7 @@ export default function Navbar({ addToRecentlyViewed }) {
         <div className="language-container">
         </div>
       </div>
+      <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
       <HeroContainer />
     </>
   )

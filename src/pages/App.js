@@ -26,7 +26,7 @@ export default function App() {
           <Route path="/movie/:id" element={<SingleMovie />} />
           <Route path="/movies/:direction" element={<AllMovies />} />
         </Routes>
-        {recentlyMovieViewed.length <= 6 ? (
+        {recentlyMovieViewed.length <= 6 && recentlyMovieViewed.length > 0 ? (
           <RecentlyViewed recentlyMovieViewed={recentlyMovieViewed} />
         ) : recentlyMovieViewed.pop(6)}
       </div>

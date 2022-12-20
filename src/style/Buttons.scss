@@ -73,6 +73,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   gap: 0.25rem;
   font-size: 14px;
   font-weight: 500;
@@ -121,5 +122,17 @@
   .star-empty {
     width: 0.8rem;
     height: 0.8rem;
+  }
+}
+.close-button {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  transition: 0.3s;
+
+  &:hover {
+    color: rgb(51, 197, 243);
   }
 }
