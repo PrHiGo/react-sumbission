@@ -8,6 +8,7 @@ export const AppProvider = ({ children }) => {
   const [movieDataPopular, setMovieDataPopular] = useState([]);
   const [movieDataTop, setMovieDataTop] = useState([]);
   const [movieDataUpcoming, setMovieDataUpcoming] = useState([]);
+  const [movieDataNowPlaying, setMovieDataNowPlaying] = useState([]);
 
   useEffect(() => {
 
@@ -82,12 +83,36 @@ export const AppProvider = ({ children }) => {
         setLoading(false);
       })
 
+
+    // Fetch Now Playing  
+    setLoading(true);
+    fetch((`https://api.themoviedb.org/3/movie/now_playing?api_key=da7419037c7a90aba658d590da479fb3&language=en-US&page=${page}`))
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        const moviesResult = data.results;
+        if (moviesResult) {
+          const movie = moviesResult.map((item) => {
+            return {
+              id: item.id,
+              title: item.title,
+              image: item.poster_path,
+            }
+          })
+          setMovieDataNowPlaying(movie);
+        } else {
+          setMovieDataNowPlaying([]);
+        }
+        setLoading(false);
+      })
+
   }, []);
 
 
 
   return (
-    <AppContext.Provider value={{ loading, movieDataPopular, movieDataTop, movieDataUpcoming }} >
+    <AppContext.Provider value={{ loading, movieDataPopular, movieDataTop, movieDataUpcoming, movieDataNowPlaying }} >
       {children}
     </AppContext.Provider>
   )

@@ -1,3 +1,14 @@
-h3 {
+.all-movies-title {
+  h3 {
+    color: whitesmoke;
+  }
+}
+.all-movies-list-object {
+  display: flex;
+  gap: 1rem;
   color: whitesmoke;
+}
+.all-movies-img {
+  width: 5rem;
+  height: 8rem;
 }

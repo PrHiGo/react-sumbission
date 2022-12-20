@@ -28,7 +28,7 @@ export default function PopularMovieCard({ addToRecentlyViewed }) {
               <img
                 src={(`https://image.tmdb.org/t/p/w500/${movie.image}`)}
                 className="movie-img"
-                alt="A of the movie"
+                alt="A poster of the movie"
               />
             </Link>
             <div className="movie-rating">
