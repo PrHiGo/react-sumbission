@@ -23,14 +23,16 @@ export function SingleMovie() {
             title: data.title,
             image: data.poster_path,
             info: data.overview,
+            date: data.release_date,
             rating: data.vote_average,
-            counts: data.vote_count
+            counts: data.vote_count,
           }
           setMovie(singleMovieData);
         } else {
           setMovie(null);
         }
         setLoading(false);
+
       })
 
     fetch(trailerUrl)
@@ -38,8 +40,13 @@ export function SingleMovie() {
         return response.json();
       })
       .then(data => {
+
         if (data) {
-          const { key } = data.results.find((video) => video.name === "Official Trailer" || video.name === "Trailer");
+          const { key } = data.results.find((video) =>
+            video.name === "Official Trailer" ||
+            video.name === "Trailer" ||
+            video.type === "Trailer"
+          );
           setTrailer(key);
         } else {
           setTrailer(null);
@@ -48,24 +55,23 @@ export function SingleMovie() {
       })
   }, [movieUrl, trailerUrl]);
 
+
   return (
-    <div className='singleMovie-container' key={movie.id}>
+    <div
+      className='singleMovie-container'
+    >
       <section>
         <div className='movie-header'>
           <h1>{movie.title}</h1>
-          <span>Year - Age - Time</span>
+          <span>{movie.date}</span>
         </div>
         <div className='singleMovieRating'>
           <div className='rating-box'>
             <span>IMDb Rating</span>
             <div className='rating-value'>
               <img src={star} alt="A star" />
-              <span>{movie.rating}/10</span>
+              <span>{Math.round(movie.rating * 10) / 10}/10</span>
             </div>
-          </div>
-          <div className='rating-box'>
-            <span>Popularity</span>
-            <div className='rating-value'></div>
           </div>
         </div>
       </section>

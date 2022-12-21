@@ -29,3 +29,19 @@
 hr {
   color: whitesmoke;
 }
+.movieLink {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: auto;
+  height: auto;
+  color: whitesmoke;
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: whitesmoke;
+  }
+}

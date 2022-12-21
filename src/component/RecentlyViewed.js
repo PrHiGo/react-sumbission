@@ -14,6 +14,7 @@ export default function RecentlyViewed({ recentlyMovieViewed }) {
       <div className="card-container">
         {recentlyMovieViewed.map((movie) => (
           <div className="movieCard-container" key={movie.id} >
+
             <Link
               to={`/movie/${movie.id}`}
               onClick={() => recentlyMovieViewed.unshift()}

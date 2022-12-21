@@ -8,6 +8,7 @@ import { AllMovies } from '../pages/AllMovies';
 // Components
 import Navbar from '../component/Navbar';
 import RecentlyViewed from '../component/RecentlyViewed'
+import HeroContainer from '../component/HeroContainer';
 
 export default function App() {
   const [recentlyMovieViewed, setRecentlyMovieViewed] = useState([]);
@@ -21,10 +22,11 @@ export default function App() {
     <Router>
       <Navbar addToRecentlyViewed={addToRecentlyViewed} />
       <div className='app'>
+        <HeroContainer />
         <Routes>
           <Route path="/" element={<Home addToRecentlyViewed={addToRecentlyViewed} />} />
           <Route path="/movie/:id" element={<SingleMovie />} />
-          <Route path="/movies/:direction" element={<AllMovies />} />
+          <Route path="/movies/:direction" element={<AllMovies addToRecentlyViewed={addToRecentlyViewed} />} />
         </Routes>
         {recentlyMovieViewed.length <= 6 && recentlyMovieViewed.length > 0 ? (
           <RecentlyViewed recentlyMovieViewed={recentlyMovieViewed} />

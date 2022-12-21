@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 import { Link } from "react-router-dom";
 
-import HeroContainer from "./HeroContainer";
 import SearchBox from "./SearchBox";
 import Menu from "./Menu";
 
@@ -58,7 +57,6 @@ export default function Navbar({ addToRecentlyViewed }) {
         </div>
       </div>
       <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
-      <HeroContainer />
     </>
   )
 }

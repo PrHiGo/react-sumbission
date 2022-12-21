@@ -1,40 +1,54 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useGlobalContext } from '../context';
 
-export function AllMovies() {
+export function AllMovies({ addToRecentlyViewed }) {
   const { direction } = useParams();
-  const { movieDataPopular, } = useGlobalContext();
   const { movieDataTop } = useGlobalContext();
+  const { movieDataPopular, } = useGlobalContext();
   const { movieDataUpcoming } = useGlobalContext();
   const { movieDataNowPlaying } = useGlobalContext();
 
+
+  //Function that renders all the movies
   const listOfMovies = (movie) => {
     return (
       <>
         <li className='all-movies-list-object' key={movie.id}>
-          <img className='all-movies-img'
-            src={(`https://image.tmdb.org/t/p/w500/${movie.image}`)}
-            alt='A Poster of the movie'
-          />
-          <span>{movie.title}</span>
+          <Link
+            to={`/movie/${movie.id}`}
+            onClick={() => addToRecentlyViewed(movie)}
+          >
+            <img className='all-movies-img'
+              src={(`https://image.tmdb.org/t/p/w500/${movie.image}`)}
+              alt='A Poster of the movie'
+            />
+          </Link>
+          <Link
+            className='movieLink'
+            to={`/movie/${movie.id}`}
+            onClick={() => addToRecentlyViewed(movie)}
+          >
+            <span>{movie.title}</span>
+          </Link>
         </li>
         <hr />
       </>
     )
   }
 
+  // Return if statement depended on useParam direction
   return (
     <div className='all-movies-container'>
       <div className='all-movies-title'>
         {direction === 'top_rated' ? (
-          <h2>Top Rated</h2>
+          <h2>Top Rated Movies</h2>
         ) : direction === 'upcoming' ? (
-          <h2>Upcoming</h2>
+          <h2>Upcoming Movies</h2>
         ) : direction === 'popular' ? (
-          <h2>Popular</h2>
+          <h2>Popular Movies</h2>
         ) : direction === 'now_playing' ? (
-          <h2>On the theatre</h2>
+          <h2>On The Theatre</h2>
         ) : null}
       </div>
       <ul className='all-movies-list'>
