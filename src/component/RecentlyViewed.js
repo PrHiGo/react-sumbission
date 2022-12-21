@@ -17,7 +17,6 @@ export default function RecentlyViewed({ recentlyMovieViewed }) {
 
             <Link
               to={`/movie/${movie.id}`}
-              onClick={() => recentlyMovieViewed.unshift()}
             >
               <img
                 src={(`https://image.tmdb.org/t/p/w500/${movie.image}`)}

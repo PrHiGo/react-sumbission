@@ -13,9 +13,14 @@ import HeroContainer from '../component/HeroContainer';
 export default function App() {
   const [recentlyMovieViewed, setRecentlyMovieViewed] = useState([]);
 
+  // Function to check that a movie wont be duplicated in Recently Viewed
   const addToRecentlyViewed = (data) => {
-    const recentlyMovieViewedClickedMovie = [data, ...recentlyMovieViewed]
-    setRecentlyMovieViewed(recentlyMovieViewedClickedMovie);
+    if (!recentlyMovieViewed.some((newMovie) => newMovie.id === data.id)) {
+      setRecentlyMovieViewed([data, ...recentlyMovieViewed].slice(0, 11));
+    } else {
+      const filteredMovies = recentlyMovieViewed.filter((filtered) => filtered.id !== data.id);
+      setRecentlyMovieViewed([data, ...filteredMovies].slice(0, 11));
+    }
   }
 
   return (
@@ -35,3 +40,5 @@ export default function App() {
     </Router>
   )
 }
+
+
