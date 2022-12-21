@@ -10,26 +10,30 @@ export default function SearchBox({ addToRecentlyViewed }) {
 
   useEffect(() => {
     setLoading(true);
-    fetch((`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchValue}`))
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        const moviesResult = data.results;
-        if (moviesResult) {
-          const movie = moviesResult.map((item) => {
-            return {
-              id: item.id,
-              title: item.title,
-              image: item.poster_path,
-            }
-          })
-          setMovies(movie);
-        } else {
-          setMovies([])
-        }
-        setLoading(false);
-      })
+    if (searchValue === "") {
+      return
+    } else {
+      fetch((`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchValue}`))
+        .then(response => {
+          return response.json();
+        })
+        .then(data => {
+          const moviesResult = data.results;
+          if (moviesResult) {
+            const movie = moviesResult.map((item) => {
+              return {
+                id: item.id,
+                title: item.title,
+                image: item.poster_path,
+              }
+            })
+            setMovies(movie);
+          } else {
+            setMovies([])
+          }
+          setLoading(false);
+        })
+    }
   }, [searchValue])
 
   return (
