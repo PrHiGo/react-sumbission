@@ -1,0 +1,38 @@
+.dropdown-list-close {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  color: whitesmoke;
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+
+  .dropdown-menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+
+    li {
+      color: whitesmoke;
+      font-size: 1.5rem;
+      list-style: none;
+      transition: 0.3s;
+      &:hover {
+        color: rgb(51, 197, 243);
+      }
+    }
+  }
+}
+.dropdown-list-open {
+  height: 100%;
+}

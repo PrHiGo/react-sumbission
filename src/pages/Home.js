@@ -1,7 +1,12 @@
 import React from 'react'
+import PopularMovieCard from '../component/PopularMovieCard'
+import UpcomingMovies from '../component/UpcomingMovies'
 
-export function Home() {
+export function Home({ addToRecentlyViewed }) {
   return (
-    <div>Home</div>
+    <div className='main-container'>
+      <PopularMovieCard addToRecentlyViewed={addToRecentlyViewed} />
+      <UpcomingMovies addToRecentlyViewed={addToRecentlyViewed} />
+    </div>
   )
 }

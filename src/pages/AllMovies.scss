@@ -1,0 +1,47 @@
+.all-movies-title {
+  h2 {
+    color: whitesmoke;
+  }
+}
+.all-movies-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .all-movies-list {
+    width: 65rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+}
+.all-movies-list-object {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: whitesmoke;
+  .all-movies-img {
+    width: 5rem;
+    height: 8rem;
+  }
+}
+hr {
+  color: whitesmoke;
+}
+.movieLink {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: auto;
+  height: auto;
+  color: whitesmoke;
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: whitesmoke;
+  }
+}
